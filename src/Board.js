@@ -36,7 +36,7 @@ function Board({ nrows=5 , ncols=5, chanceLightStartsOn=0.25 }) {
     // create array-of-arrays of true/false values
     for(let y = 0; y < nrows; y++) {
       let row = [];
-      for(let x = 0; x < ncols; x++ ) {
+      for (let x = 0; x < ncols; x++) {
         row.push(Math.random() < chanceLightStartsOn);
       }
       initialBoard.push(row);
