@@ -8,5 +8,12 @@ describe("<Board /> rendering", function() {
     it("renders without crashing", function() {
       render(<Board />);
     });
+    it("matches snapshot for full board", function() {
+      const { asFragment } = render(<Board chanceLightStartsOn={1} />);
+      expect(asFragment()).toMatchSnapshot();
+    });
+    
+
+
   });
 });

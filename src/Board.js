@@ -36,7 +36,8 @@ function Board({ nrows=5 , ncols=5, chanceLightStartsOn=0.25 }) {
     // create array-of-arrays of true/false values
     for(let y = 0; y < nrows; y++) {
       let row = [];
-      for (let x = 0; x < ncols; x++) {
+        for (let x = 0; x < ncols; x++) {
+          //if Math.random is less than changeListStartsOn make it true, if not false
         row.push(Math.random() < chanceLightStartsOn);
       }
       initialBoard.push(row);
@@ -51,6 +52,8 @@ function Board({ nrows=5 , ncols=5, chanceLightStartsOn=0.25 }) {
   /* flip cells around a given cell */
   function flipCellsAround(coord) {
     setBoard(oldBoard => {
+    //  console.log(coord)
+      // split on dash and return a number
       const [y, x] = coord.split("-").map(Number);
       const flipCell = (y, x, boardCopy) => {
           // if this coord is actually on board, flip it
